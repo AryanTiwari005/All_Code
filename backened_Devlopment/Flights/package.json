@@ -1,0 +1,8 @@
+{
+  "name": "flights",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "npm --prefix Base-Node-Project-Template run dev",
+    "start": "npm --prefix Base-Node-Project-Template start"
+  }
+}
