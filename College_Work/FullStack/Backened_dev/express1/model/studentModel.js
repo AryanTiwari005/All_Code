@@ -1,3 +1,4 @@
+
 import mongoose from "mongoose";
 
 const studentsSchema = mongoose.Schema({
@@ -12,7 +13,12 @@ const studentsSchema = mongoose.Schema({
     course: {
         type: String,
         required: true
+    },
+    email: {
+        type: String,
+        required:true
     }
+
 });
 
 const student = mongoose.model("student", studentsSchema);
