@@ -1,6 +1,7 @@
 import jwt from 'jsonwebtoken';
-const getToken = (user)=>{
+const generateToken = (user)=>{
     return jwt.sign({
+        role:user.role,
         email:user.email,
         id:user._id
     },
@@ -10,4 +11,4 @@ const getToken = (user)=>{
     }
     )
 }
-export default getToken;
+export default generateToken;

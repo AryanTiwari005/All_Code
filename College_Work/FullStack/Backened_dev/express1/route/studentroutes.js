@@ -2,6 +2,7 @@ import express, { json } from 'express';
 import teacher from '../model/teacherModel.js';
 import student from '../model/studentModel.js'; 
 import checkRoles from '../middleware/roleMiddleware.js';
+import authMiddleware from '../middleware/authmiddleware.js';
 const router = express.Router();
 import { v4 as uuidv4 } from "uuid";
 let students = [
@@ -15,8 +16,8 @@ let students = [
         name:"Lipsha",
         course:"mbbs"
     }
-]-
-
+]
+router.use(authMiddleware);
 //
 
 router.get('/local',checkRoles("teacher", "students", "admin"),(req,res)=>{

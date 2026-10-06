@@ -3,6 +3,7 @@ import dotenv from 'dotenv';
 import connectDB from './db.js';
 import StudentRoutes from './route/studentroutes.js';
 import TeacherRoutes from './route/TeacherRoutes.js';
+import authRoutes from './route/authRoute.js';
 
 dotenv.config();
 connectDB();
@@ -18,10 +19,10 @@ app.use(express.json());
 
 //     next();
 // });
-
+app.use('/', authRoutes);
 app.use('/students', StudentRoutes);
 app.use('/teachers', TeacherRoutes);
-
+    
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
